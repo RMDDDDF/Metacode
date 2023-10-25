@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 初始化开始 */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            font: 12px/1.5 Microsoft Yahei, Heiti SC, tahoma, arial, Hiragino Sans GB "\5B8B\4F53";
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        img {
+            border: 0;
+            vertical-align: middle;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .clearfix:after {
+            visibility: hidden;
+            clear: both;
+            display: block;
+            content: '.';
+            height: 0;
+        }
+
+        /* 初始化结束 */
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?tm03uu');
+            src: url('fonts/icomoon.eot?tm03uu#iefix') format('embedded-opentype'),
+                url('fonts/icomoon.ttf?tm03uu') format('truetype'),
+                url('fonts/icomoon.woff?tm03uu') format('woff'),
+                url('fonts/icomoon.svg?tm03uu#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        span {
+            font-family: 'icomoon';
+        }
+
+        .box {
+            width: 1233px;
+            height: 715px;
+            background-color: #fafafa;
+            border-radius: 5px;
+            z-index: -1;
+        }
+
+        .leftnav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 715px;
+            width: 220px;
+            background-color: #0b679e;
+            /* z-index: 10; */
+        }
+
+        .logo img {
+            width: 90%;
+            margin: 15px;
+        }
+
+        .menuleft a {
+            float: left;
+            width: 99%;
+            height: 40px;
+            border: 1px solid #095786;
+            background-color: #0b679e;
+            text-indent: 2em;
+            text-align: left;
+            line-height: 40px;
+            margin-bottom: -1px;
+            color: #2d87d6;
+            font-size: 14px;
+
+        }
+
+        .menuleft .waichudengji {
+
+            color: #e0ebf2;
+        }
+
+        .menuleft a:hover {
+            background-color: #515a6e;
+        }
+
+        .menuleft .shouye {
+            background-color: #363e4f;
+        }
+
+        .topnav {
+            position: fixed;
+            left: 220px;
+            top: 0;
+            height: 44px;
+            width: 996px;
+            background-color: #09517d;
+            color: #fefefe;
+            border-top-right-radius: 5px;
+
+        }
+
+        .topnav .leftbutton {
+            float: left;
+            background-color: #09517d;
+            border: 0;
+
+        }
+
+        .topnav .button1 {
+            padding: 12px 22px;
+            background-color: #09517d;
+            border: 0;
+            color: #4fb6f3;
+            font-size: 16px;
+
+        }
+
+        .topnav .button2,
+        .button3,
+        .button4 {
+            padding: 11px 22px;
+            background-color: #09517d;
+            border: 0;
+            color: #b5cad7;
+            font-size: 14px;
+        }
+
+        .topnav .button2:hover,
+        .button3:hover,
+        .button4:hover {
+            color: #f9fbfc;
+        }
+
+        .topnav .right {
+            float: right;
+            height: 44px;
+        }
+
+        .topnav .button5 {
+            position: relative;
+            float: right;
+            height: 44px;
+            width: 275px;
+            border: 0;
+            margin-left: 10px;
+            background-color: #09517d;
+            color: #4cb2ee;
+            vertical-align: middle;
+            /* background-color: pink; */
+            border-top-right-radius: 5px;
+
+        }
+
+        .right .xuesheng {
+            line-height: 44px;
+        }
+
+        .right .headlogo {
+            /* display: inline-block; */
+            /* float: left; */
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -17.5px;
+            height: 35px;
+            width: 35px;
+            background-color: #2d8cf0;
+            color: #fff;
+            line-height: 35px;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 50%;
+        }
+
+        .right .welcome {
+            /* display: inline-block; */
+            /* float: left; */
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            margin-top: -9px;
+        }
+
+        .right .down {
+            position: absolute;
+            right: 10px;
+            top: 16px;
+        }
+
+        .floatmenu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            width: 110px;
+            height: 120px;
+            padding: 10px 0;
+            background-color: #fff;
+            color: #515a6e;
+            font-size: 12px;
+            text-align: center;
+            z-index: 1000;
+
+        }
+
+        .floatmenu a {
+            display: block;
+            width: 100%;
+            height: 30px;
+            color: #515a6e;
+            line-height: 30px;
+        }
+
+        .floatmenu a:hover {
+            background-color: #f3f3f3;
+        }
+
+        .gaimima {
+            margin-bottom: 5px;
+        }
+
+
+        .fengexian {
+
+            border: 0.5px solid #e8eaec;
+        }
+
+        .out {
+            margin-top: 5px;
+        }
+
+        .gailan {
+            position: fixed;
+            top: 44px;
+            left: 220px;
+            width: 800px;
+            height: 50px;
+            padding-left: 20px;
+            background-color: #fff;
+            line-height: 50px;
+            color: #515a6e;
+            font-weight: 700;
+            z-index: 0;
+        }
+
+        .neirong {
+            position: fixed;
+            top: 200px;
+            left: 230px;
+            width: 980px;
+            height: 200px;
+            background-color: #fff;
+            color: #515a6e;
+            z-index: 0;
+        }
+
+        .neirong h2 {
+            position: absolute;
+            left: 40px;
+            top: 50px;
+        }
+
+        .neirong h3 {
+            position: absolute;
+            left: 40px;
+            bottom: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 最大盒子开始 -->
+    <div class="box" id="box">
+        <!-- 左侧竖导航栏开始 -->
+        <aside class="leftnav">
+            <div class="logo">
+                <img src="Images/imges/logo.png" alt="">
+            </div>
+            <!-- 左侧导航栏选项开始 -->
+            <section class="menuleft">
+                <a href="javascript:;" class="shouye" title="首页">
+                    <span> 首页</span>
+                </a>
+                <a href="waichudengji.html" class="waichudengji" title="外出登记">
+                    <span> 外出登记</span>
+                </a>
+            </section>
+            <!-- 左侧导航栏选项结束 -->
+        </aside>
+        <!-- 左侧导航栏结束 -->
+        <!-- 顶部导航栏开始 -->
+        <nav class="topnav">
+            <ul>
+                <section class="left">
+                    <li class="leftbutton "><button class="button1">&lt</button></li>
+                    <li class="leftbutton "><button class="button2">我的</button></li>
+                    <li class="leftbutton "><button class="button3">信息填报</button></li>
+                    <li class="leftbutton "><button class="button4">事务管理</button></li>
+            </ul>
+            </section>
+            <!-- 顶部的右侧部分 -->
+            <section class="right">
+                <span class="xuesheng">学生</span>
+                <button class="button5">
+                    <span class="headlogo"></span>
+                    <span class="welcome">欢迎你，ab【<span class="stunub"></span>】</span>
+                    <span class="down"></span>
+                </button>
+                <section class="floatmenu">
+                    <ul>
+                        <li><a href="javascript:;">
+                                <span></span>
+                                <span>个人信息</span>
+                            </a></li>
+                        <li><a href="javascript:;" class="gaimima">
+                                <span></span>
+                                <span>修改密码</span>
+                            </a></li>
+                        <li class="fengexian"></li>
+                        <li><a href="javascript:;" class="out" @click="logout">
+                                <span></span>
+                                <span>退出登录</span>
+                            </a></li>
+                    </ul>
+                </section>
+            </section>
+            <!-- 顶部的右侧部分结束 -->
+        </nav>
+        <!-- 顶部导航栏结束 -->
+        <div class="gailan">
+            <p>概览</p>
+        </div>
+        <div class="neirong">
+            <h2>学生工作管理系统后台</h2>
+            <h3>欢迎您</h3>
+        </div>
+    </div>
+    <!-- 最大盒子结束 -->
+
+    <script>
+        var username = localStorage.getItem('username');
+        var password = localStorage.getItem('password');
+        var remember = localStorage.getItem('remember');
+        var log = localStorage.getItem('log');
+        var floatmenu = document.querySelector(".floatmenu");
+        var btn5 = document.querySelector('.button5');
+        var stunub = document.querySelector('.stunub');
+        console.log(floatmenu.style.display);
+
+        if (log == 'true') {
+        } else {
+            // 若不符合条件直接访问，则退回首页
+            location.assign('homepage.html');
+        }
+        //获取学号
+        stunub.innerHTML = username;
+
+        btn5.addEventListener('click', function () {
+            var judge = floatmenu.style.display;
+            if (judge == 'none') {
+                floatmenu.style.display = 'block';
+            } else {
+                floatmenu.style.display = 'none';
+            }
+        })
+        // var box = new Vue({
+        //     el: "#box",
+        //     data: {
+        //         list1: [
+        //             '  首页',
+        //             '  外出登记'
+        //         ],
+        //         username: username,
+        //     },
+        //     methods: {
+        //         showmenu() {
+        //             console.log(floatmenu.style.display);
+        //             floatmenu.style.display = 'block';
+        //         },
+        //         hidemenu() {
+        //             console.log(floatmenu.style.display);
+        //             floatmenu.style.display = 'none';
+        //         },
+        //         logout() {
+        //             localStorage.setItem('username', null);
+        //             if (remember == 'false') {
+        //                 localStorage.setItem('password', null);
+        //             }
+        //             localStorage.setItem('log', false);
+        //             location.assign('homepage.html');
+        //         }
+        //     }
+        // })
+    </script>
+
+</body>
+
+</html>

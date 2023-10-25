@@ -1,0 +1,265 @@
+/* 初始化 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    font: 12px/1.5 Microsoft Yahei, Heiti SC, tahoma, arial, Hiragino Sans GB "\5B8B\4F53";
+    background-image: url("Images/studentLoginbg.jpg");
+    background-size: 110%;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+button {
+    cursor: pointer;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: '.';
+    height: 0;
+}
+
+/* 初始化结束 */
+/* 字体声明 */
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?2yjoea');
+    src: url('fonts/icomoon.eot?2yjoea#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?2yjoea') format('truetype'),
+        url('fonts/icomoon.woff?2yjoea') format('woff'),
+        url('fonts/icomoon.svg?2yjoea#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+span {
+    font-family: 'icomoon';
+}
+
+/* 字体图标相关结束 */
+input {
+    outline: none;
+}
+
+/* 大盒子 */
+.container {
+    position: relative;
+    border-radius: 20px;
+}
+
+.logo {
+    position: absolute;
+    left: 80px;
+    top: 30px;
+    width: 390px;
+    height: 80px;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.logo img {
+    margin: 20px 45px;
+    width: 300px;
+}
+
+.rightbox {
+    position: absolute;
+    right: 0;
+    height: 730px;
+    width: 500px;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.loginbox {
+    position: absolute;
+    right: 50%;
+    top: 120px;
+    margin-right: -180px;
+    width: 360px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.loginway {
+    padding-left: 20px;
+    width: 280px;
+    height: 40px;
+    margin: 30px 30px 10px 30px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.zhanghao,
+.dongtaima {
+    float: left;
+    height: 39px;
+    padding: 10px 0;
+    margin: 0 30px;
+    border: 0;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 700;
+
+}
+
+.zhanghao:hover,
+.dongtaima:hover {
+    border-bottom: 1px solid#367ef1;
+    color: #367ef1;
+}
+
+.inputs {
+    position: absolute;
+    left: 50%;
+    width: 280px;
+    margin: 10px;
+    height: 100px;
+    margin-left: -140px;
+}
+
+.username,
+.password {
+    position: relative;
+    height: 45px;
+    margin-bottom: 10px;
+    line-height: 40px;
+    text-indent: 1em;
+    font-size: 24px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.icomoon {
+    display: inline-block;
+    margin-top: 3px;
+    margin-left: -20px;
+}
+
+input::-ms-reveal {
+    display: none;
+}
+
+.usernameinput,
+.passwordinput {
+    position: absolute;
+    top: 0;
+    height: 45px;
+    width: 216px;
+    margin-left: 10px;
+    border: 0;
+    font-size: 14px;
+    color: #757575;
+    border-radius: 5px;
+}
+
+.username:hover,
+.password:hover {
+    border-color: #06c9fa;
+}
+
+.miandenglu {
+    position: absolute;
+    left: 41px;
+    top: 210px;
+    height: 11px;
+    font-size: 12px;
+    line-height: 10px;
+}
+
+.miandenglubutton {
+    float: left;
+    margin-right: 3px;
+}
+
+.loginbutton {
+    position: absolute;
+    left: 50%;
+    top: 240px;
+    width: 280px;
+    height: 37px;
+    margin-left: -140px;
+    /* padding-top: 13px; */
+    border: 0;
+    background-color: #367ef1;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    line-height: 37px;
+    border-radius: 5px;
+}
+
+.loginbutton span {
+    margin: 10px;
+}
+
+.else {
+    position: absolute;
+    left: 50%;
+    top: 295px;
+    margin-left: -140px;
+    width: 280px;
+    font-size: 14px;
+}
+
+.zhanghaojihuo {
+    float: left;
+    color: #0000ee;
+}
+
+.wangjimima {
+    float: right;
+    color: #0000ee;
+}
+
+.elselogin {
+    position: absolute;
+    bottom: 0;
+    width: 330px;
+    height: 50px;
+    padding-left: 30px;
+    background-color: #f3f6ff;
+    line-height: 50px;
+    font-size: 12px;
+    border-radius: 0 0 5px 5px;
+}
+
+.qq {
+    position: absolute;
+    left: 120px;
+}
+
+.weixin {
+    position: absolute;
+    left: 160px;
+}
+
+.beian {
+    position: absolute;
+    bottom: 42px;
+    left: 50%;
+    margin-left: -250px;
+    padding: 30px 30px;
+    width: 440px;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+
+}

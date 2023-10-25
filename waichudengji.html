@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外出登记</title>
+    <link rel="stylesheet" href="waichudengji.css">
+</head>
+
+<body>
+    <!-- 最大盒子开始 -->
+    <div class="box" id="box">
+        <!-- 左侧竖导航栏开始 -->
+        <aside class="leftnav">
+            <div class="logo">
+                <img src="Images/imges/logo.png" alt="">
+            </div>
+            <!-- 左侧导航栏选项开始 -->
+            <section class="menuleft wode-menu">
+                <a href="houtaihomepage.html" class="shouye" title="首页">
+                    <span> 首页</span>
+                </a>
+                <a href="waichudengji.html" class="waichudengji" title="外出登记">
+                    <span> 外出登记</span>
+                </a>
+            </section>
+            <section class="menuleft shiwuguanli-menu" style="display: none;">
+                <a href="javascript:;" class="gongzuopingjia" title="首页">
+                    <span> 学生工作评价</span>
+                </a>
+                <a href="javascript:;" class="yiqingfangkong" title="外出登记">
+                    <span> 疫情防控</span>
+                    <span class="yiqingfangkong-arrow"></span>
+                </a>
+                <a href="javascript:;" class="yimiaojiezhong">疫苗接种</a>
+            </section>
+            <!-- 左侧导航栏选项结束 -->
+        </aside>
+        <!-- 左侧导航栏结束 -->
+        <!-- 顶部导航栏开始 -->
+        <nav class="topnav">
+
+            <section class="left">
+                <ul>
+                    <li class="leftbutton "><button class="button1">&lt</button></li>
+                    <li class="leftbutton "><button class="wode">我的</button></li>
+                    <li class="leftbutton "><button class="xinxitianbao">信息填报</button></li>
+                    <li class="leftbutton "><button class="shiwuguanli">事务管理</button></li>
+                </ul>
+            </section>
+            <!-- 顶部的右侧部分 -->
+            <section class="right">
+                <span class="xuesheng">学生</span>
+                <button class="button5">
+                    <span class="headlogo"></span>
+                    <span class="welcome">欢迎你，ab【<span class="stunub"></span>】</span>
+                    <span class="down"></span>
+                </button>
+                <section class="floatmenu">
+                    <ul>
+                        <li><a href="javascript:;">
+                                <span></span>
+                                <span>个人信息</span>
+                            </a></li>
+                        <li><a href="javascript:;" class="gaimima">
+                                <span></span>
+                                <span>修改密码</span>
+                            </a></li>
+                        <li class="fengexian"></li>
+                        <li><a href="javascript:;" class="out" @click="logout">
+                                <span></span>
+                                <span>退出登录</span>
+                            </a></li>
+                    </ul>
+                </section>
+            </section>
+            <!-- 顶部的右侧部分结束 -->
+        </nav>
+        <!-- 顶部导航栏结束 -->
+        <!-- 手动面包屑 -->
+        <div class="mianbaoxie">
+            <span class="wode">我的</span>
+            <span class="xiegang"> / </span>
+            <span class="waichu">外出登记</span>
+        </div>
+        <!-- 手动面包屑结束 -->
+        <!-- 中间部分开始 -->
+        <div class="neirong">
+            <div class="liebiao">
+                <span>列表</span>
+                <button class="shouliebiao">
+                    <span class="arrow"></span>
+                </button>
+            </div>
+            <!-- 可隐藏部分开始 -->
+            <div class="yincang">
+                <div class="lankuang">
+                </div>
+                <div class="shuaxin">
+                    <span class="zidingyilie">自定义列</span>
+                    <button class="shuaxinbutton"><span></span>刷新表格</button>
+                </div>
+                <div class="main">
+                    <table border="0" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th>外出时间</th>
+                                <th>外出地区</th>
+                                <th>外出事由</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="footer">
+                    <button class="shenqing">
+                        <span>+</span>
+                        <span>申请外出</span>
+                    </button>
+                    <div class="yema">
+                        <span class="gongtiao">共
+                            <span class="childrennub"></span>
+                            条</span>
+                        <select class="xuanzeyeshu">
+                            <option value="10">10条/页</option>
+                            <option value="30">30条/页</option>
+                            <option value="50">50条/页</option>
+                            <option value="100">100条/页</option>
+                        </select>
+                        <span>跳至 </span>
+                        <input type="text" class="shuruyema">
+                        <span> 页</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 可隐藏部分结束 -->
+            <!-- 申请详情开始 -->
+            <div class="shenqingxiangqing" style="display: none;">
+                <div class="mask">
+                </div>
+                <div class="rightbox">
+                    <div class="rightboxheader">
+                        <span>外出申请详情</span>
+                        <a href="javascript:;" class="axs"><span></span></a>
+                    </div>
+                    <div class="righboxbody">
+                        <div class="rightboxbodyinner">
+                            <ul>
+                                <li>
+                                    <span>申请类型:</span>
+                                    <select>
+                                        <option disabled="disabled" selected="selected" value="null">请选择</option>
+                                        <option value="在校外出">在校外出</option>
+                                        <option value="居家外出">居家外出</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <span>申请外出时间:</span>
+                                    <span>年</span>
+                                    <select id="year">
+                                        <option disabled="disabled" selected="selected" value="null">请选择</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                    </select>
+                                    <span>月</span>
+                                    <select id="month">
+                                        <option disabled="disabled" selected="selected" value="null">请选择</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                    <span>日</span>
+                                    <select id="day">
+                                        <option disabled="disabled" selected="selected" value="null">请选择</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </li>
+                                <li class="zhongdian">
+                                    <span>钟点</span>
+                                    <select id="o'clock">
+                                        <option disabled="disabled" selected="selected" value="null">请选择</option>
+                                        <option value="1">1:00</option>
+                                        <option value="2">2:00</option>
+                                        <option value="3">3:00</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <span>外出地区：</span>
+                                    <span>省份：</span>
+                                    <select name="" id="sheng">
+                                        <option disabled="disabled" selected="selected" value="null">请选择</option>
+                                        <option value="广东省">广东省</option>
+                                    </select>
+                                    <span>市区：</span>
+                                    <select name="" id="shi">
+                                        <option disabled="disabled" selected="selected" value="null">请选择</option>
+                                        <option value="广州市">广州市</option>
+                                    </select>
+
+                                </li>
+                                <li>
+                                    <span>外出事由：</span>
+                                    <div class="text">
+                                        <textarea id="外出事由"></textarea>
+                                    </div>
+
+                                </li>
+                            </ul>
+                            <!-- 时间轴开始 -->
+                            <div class="shijianzhou">
+                                <div class="shijianjiedian shenqingshijian">
+                                    <span class="xiaoyuandian"></span>
+                                    <span class="jiacu">申请时间</span>
+                                </div>
+                                <div class="fengehezi1"></div>
+
+                                <div class="shijianjiedian xueyuanshenhe">
+                                    <span class="xiaoyuandian"></span>
+                                    <span class="jiacu">学院审核</span>
+                                    <span class="daishenhe">待审核</span>
+                                    <p class="jiacu shenheshuoming">审核说明</p>
+                                </div>
+                                <div class="fengehezi2"></div>
+                                <div class="shijianjiedian xuexiaoshenhe">
+                                    <span class="xiaoyuandian"></span>
+                                    <span class="jiacu">学校审核</span>
+                                    <span class="daishenhe">待审核</span>
+                                    <p class="jiacu shenheshuoming">审核说明</p>
+                                </div>
+                            </div>
+                            <!-- 时间轴结束 -->
+                        </div>
+                        <!-- 底部按钮开始 -->
+                        <div class="rightboxfooter">
+                            <button class="submitfooter">
+                                <span></span>
+                                <span>提交</span>
+                            </button>
+                            <button class="axsfooter">关闭</button>
+                        </div>
+                        <!-- 底部按钮结束 -->
+                    </div>
+                </div>
+            </div>
+            <!-- 申请详情结束 -->
+
+        </div>
+        <!-- 中间部分结束 -->
+    </div>
+    <!-- 最大盒子结束 -->
+
+    <script>
+        {
+            var username = localStorage.getItem('username');
+            var password = localStorage.getItem('password');
+            var remember = localStorage.getItem('remember');
+            var log = localStorage.getItem('log');
+
+            var floatmenu = document.querySelector(".floatmenu");
+            var stunub = document.querySelector('.stunub');
+            var btn5 = document.querySelector('.button5');
+            var yincang = document.querySelector('.yincang');
+            var shouliebiao = document.querySelector('.shouliebiao');
+            var yiqingfangkong = document.querySelector('.yiqingfangkong');
+            var shiwuguanliMenu = document.querySelector('.shiwuguanli-menu');
+            var yimiaojiezhong = document.querySelector('.yimiaojiezhong');
+            var shiwuguanli = document.querySelector('.shiwuguanli');
+            var wode = document.querySelector('.wode');
+            var wodeMenu = document.querySelector('.wode-menu');
+            var leftbuttons = document.querySelector('.left');
+            var leftbutton = leftbuttons.children[0];
+            var xiangqingSelects = document.querySelectorAll('.rightboxbodyinner select');
+            var axs = document.querySelector('.axs');
+            var shenqingxiangqing = document.querySelector('.shenqingxiangqing');
+            var shenqing = document.querySelector('.shenqing');
+            var axsfooter = document.querySelector('.axsfooter');
+            var out = document.querySelector('.out');
+        }
+        if (log == 'true') {
+
+        } else {
+            location.assign('homepage.html');
+        }
+        //获取学号
+        stunub.innerHTML = username;
+
+        btn5.addEventListener('click', function () {
+            var judge = floatmenu.style.display;
+            if (judge == 'none') {
+                floatmenu.style.display = 'block';
+            } else {
+                floatmenu.style.display = 'none';
+            }
+        })
+        // 退出键
+        out.addEventListener('click', function () {
+            localStorage.setItem('username', null);
+            if (remember == 'false') {
+                localStorage.setItem('password', null);
+            }
+            localStorage.setItem('log', false);
+            location.assign('homepage.html');
+        })
+        // 隐藏与显示二级菜单中的下拉菜单
+        yiqingfangkong.addEventListener('click', function () {
+            //取得第二个孩子，即箭头
+            var arrow = yiqingfangkong.children[1];
+            var arrowup = '';
+            var arrowdown = '';
+            var darkblue = '#084e78';
+            var blue = '#0b679e';
+            console.log(arrow.innerHTML);
+            if (arrow.innerHTML == arrowdown) {
+                yiqingfangkong.children[1].innerHTML = arrowup;
+                yimiaojiezhong.style.display = 'block';
+                yiqingfangkong.style.backgroundColor = darkblue;
+            } else {
+                yiqingfangkong.children[1].innerHTML = arrowdown;
+                yimiaojiezhong.style.display = 'none';
+                yiqingfangkong.style.backgroundColor = blue;
+            }
+        })
+        // 隐藏与显示事务管理菜单
+        shiwuguanli.addEventListener('click', function () {
+            // 取得ul
+            for (var i = 1; i < 4; i++) {
+                leftbutton.children[i].children[0].style.color = '#b5cad7';
+            }
+            leftbutton.children[3].children[0].style.color = '#f9fbfc';
+            wodeMenu.style.display = 'none';
+            shiwuguanliMenu.style.display = 'block';
+
+        })
+        // 隐藏与显示我的菜单
+        wode.addEventListener('click', function () {
+            for (var i = 1; i < 4; i++) {
+                leftbutton.children[i].children[0].style.color = '#b5cad7';
+            }
+            leftbutton.children[1].children[0].style.color = '#f9fbfc';
+            wodeMenu.style.display = 'block';
+            shiwuguanliMenu.style.display = 'none';
+        })
+        shouliebiao.addEventListener('click', function () {
+            var arrow = shouliebiao.children[0];
+            var arrowup = '';
+            var arrowdown = '';
+            console.log(arrow.innerHTML);
+            if (arrow.innerHTML == arrowdown) {
+                shouliebiao.children[0].innerHTML = arrowup;
+                yincang.style.display = 'none';
+            } else {
+                shouliebiao.children[0].innerHTML = arrowdown;
+                yincang.style.display = 'block';
+            }
+            // changearrow(arrow,yincang);
+        })
+
+        axs.addEventListener('click', close);
+        axsfooter.addEventListener('click', close);
+
+        function close() {
+            shenqingxiangqing.style.display = 'none';
+        }
+        shenqing.addEventListener('click', function () {
+            shenqingxiangqing.style.display = 'block';
+        })
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生工作系统管理后台登录选择界面</title>
+    <link rel="stylesheet" href="homepageStyle.css">
+</head>
+
+<body>
+    <!-- 最大的盒子 -->
+    <div class="container">
+        <div class="logo"><img src="Images/loginLogo.png" alt=""></div>
+        <!-- 选择角色的盒子开始 -->
+        <div class="select">
+            <h3>请选择角色</h3>
+            <div class="box">
+                <a href="javascript:;" class="button stu" title="学生">
+                    <img src="Images/student.png" alt="">
+                    <p>学生</p>
+                    <div class="mask"></div>
+                </a>
+                <a href="javascript:;" class="button sys" title="学校管理员">
+                    <img src="Images/system.png" alt="">
+                    <p>学校管理员</p>
+                </a>
+                <a href="javascript:;" class="button mon" title="学生班委">
+                    <img src="Images/monitor.png" alt="">
+                    <p>学生班委</p>
+                </a>
+                <a href="javascript:;" class="button emp" title="用工单位">
+                    <img src="Images/employ.png" alt="">
+                    <p>用工单位</p>
+                </a>
+                <a href="javascript:;" class="button auth" title="统一身份认证登录">
+                    <img src="Images/csa-login.png" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- 选择角色的盒子结束 -->
+        <!-- 备案盒子开始 -->
+        <a href="javascript:;" class="button beian">
+            粤ICP备05008833号
+        </a>
+    </div>
+
+    <script>
+        // 免登录思路：存入localStorage中，再次点击“学生”身份时先检测是否能取出值，能的话直接跳转后台首页，跳过登录页面
+        // 获取学生按钮对象
+
+        var stu = document.querySelector('.stu');
+        // 注册事件
+        stu.addEventListener('click', function () {
+            // 获取本地存储
+            var log = localStorage.getItem('log');
+            if (log == 'true') {
+                // 登录过
+                location.assign('houtaihomepage.html');
+            } else {
+                // 没有登录过
+                location.assign('studentlogin.html');
+            }
+
+        })
+
+
+    </script>
+
+
+</body>
+
+</html>

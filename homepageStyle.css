@@ -1,0 +1,181 @@
+/* 初始化 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    font: 12px/1.5 Microsoft Yahei, Heiti SC, tahoma, arial, Hiragino Sans GB "\5B8B\4F53";
+    background-image: url('Images/xuexiaobeijing.jpg');
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+button {
+    cursor: pointer;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: '.';
+    height: 0;
+}
+
+/* 初始化结束 */
+/* 大盒子 */
+.container {
+    position: relative;
+    padding-top: 20px;
+    width: 1232px;
+    height: 725px;
+}
+
+/* 右上角logo */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 38.5px;
+    width: 293px;
+    height: 70px;
+}
+
+/* 右上角logo结束 */
+
+/* 包含选项的大盒子 */
+.select {
+    position: absolute;
+    width: 335px;
+    height: 450px;
+    background-color: rgba(0, 0, 0, .4);
+    right: 30px;
+    bottom: 30px;
+    padding: 15px;
+    font-weight: 700;
+}
+
+.select a {
+    display: block;
+    color: #333333;
+    font-size: 18px;
+}
+
+.select p {
+    text-align: center;
+    font-size: 14px;
+}
+
+.stu img,
+.emp img,
+.mon img,
+.sys img {
+    height: 60px;
+    width: 60px;
+}
+
+.select h3 {
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: normal;
+    /* margin-top: 15px; */
+    margin-bottom: 15px;
+}
+
+.button {
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, .9);
+    padding: 10px;
+    color: #333;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.button:hover {
+    background: #fff;
+    text-decoration: underline;
+    color: #23527c;
+}
+
+/* 学生选项 */
+.stu {
+    width: 80px;
+    height: 127px;
+    margin-left: 10px;
+}
+
+.stu img {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+.sys {
+    right: 20px;
+    width: 186px;
+    height: 75px;
+    line-height: 75px;
+}
+
+.sys img {
+    margin-top: 10px;
+    float: left;
+}
+
+.mon {
+    bottom: 165px;
+    margin-left: 10px;
+    width: 170px;
+    height: 75px;
+    line-height: 75px;
+}
+
+.mon img {
+    float: left;
+    margin-top: 10px;
+}
+
+.emp {
+    width: 80px;
+    height: 127px;
+    right: 20px;
+    bottom: 165px;
+    margin-left: 10px;
+}
+
+.emp img {
+    margin-top: 10px;
+}
+
+.auth {
+    width: 300px;
+    height: 70px;
+    margin-left: 10px;
+    top: 340px;
+}
+
+.beian {
+    bottom: 0;
+    left: 50%;
+    margin-left: -150px;
+    width: 300px;
+    height: 30px;
+    color: #337abb;
+    font-size: 14px;
+    line-height: 30px;
+
+}

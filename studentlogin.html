@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生登录界面</title>
+    <link rel="stylesheet" href="studentlogin.css">
+</head>
+
+<body>
+    <!-- 最大的盒子 -->
+    <div class="container">
+        <div class="logo">
+            <img src="Images/studentLoginLogo.png" alt="">
+        </div>
+        <!-- 右侧登录大盒子开始 -->
+        <div class="rightbox">
+            <!-- <div class="language">
+                <button class="leftButton">English</button>
+                <button class="rightButton">中文</button>
+            </div> -->
+            <!-- 白色登录盒子开始 -->
+            <div class="loginbox">
+                <div class="loginway">
+                    <button class="zhanghao">账号登录</button>
+                    <button class="dongtaima">动态码登录</button>
+                </div>
+                <div class="inputs">
+                    <div class="username">
+                        <span class="icomoon"></span>
+                        <input type="text" id="username" class="usernameinput" placeholder="请输入学号">
+                    </div>
+                    <div class="password">
+                        <span class="icomoon"></span>
+                        <input type="password" id="password" class="passwordinput" placeholder="请输入密码">
+                    </div>
+                </div>
+                <div class="miandenglu">
+                    <input type="checkbox" class="miandenglubutton">
+                    记住密码
+                </div>
+                <!-- 初次想法：用js判断是否输入正确，正确的话修改href为学生工作管理系统后台 -->
+                <button type="submit" class="loginbutton" title="登录">
+                    <span>登</span>
+                    <span>录</span>
+                </button>
+                <div class="else">
+                    <a href="javascript:;" class="zhanghaojihuo" title="账号激活">账号激活</a>
+                    <a href="javascript:;" class="wangjimima" title="忘记密码">忘记密码</a>
+                </div>
+                <!-- 其他登录方式盒子 -->
+                <div class="elselogin">
+                    <span>其他登录方式:</span>
+                    <a href="javascript:;" class="qq">
+                        <img src="Images/QQ.png" alt="">
+                    </a>
+                    <a href="javascript:;" class="weixin">
+                        <img src="Images/weixin.png" alt="">
+                    </a>
+                </div>
+                <!-- 其他登录方式盒子结束 -->
+            </div>
+            <!-- 白色登录盒子结束 -->
+            <div class="beian">
+                粤ICP备05008833号 Copyright © 2022 Guangdong University of Technology All Rights Reserved 广东工业大学
+            </div>
+        </div>
+
+        <!-- 右侧登录大盒子结束 -->
+    </div>
+    <!-- 最大盒子结束 -->
+
+    <script>
+        // 获取document对象
+        var username = document.querySelector('.usernameinput');
+        var password = document.querySelector('.passwordinput');
+        var btn = document.querySelector('.loginbutton');
+        var miandenglu = document.querySelector('.miandenglubutton');
+        var remember = localStorage.getItem('remember');
+        var log = localStorage.getItem('log');
+        // 免登录思路：存入localStorage中，再次点击“学生”身份时先检测是否能取出值，能的话直接跳转后台首页，跳过登录页面
+        var usnlocal = localStorage.getItem('username');
+        var pwdlocal = localStorage.getItem('password');
+        if (log == 'true') {
+            location.assign('houtaihomepage.html');
+        }
+        if (remember == 'true') {
+            password.value = localStorage.getItem('password');
+        }
+
+        btn.addEventListener('click', function () {
+            var valu = username.value;
+            var valp = password.value;
+            if (valu != '' && valp != '' && null != valu && null != valp) {
+                // 如果记住密码按钮被选中，则将密码保存
+                var status = miandenglu.checked;
+                if (status == true) {
+                    // 获取username和password的值，存入本地
+                    localStorage.setItem('username', valu);
+                    console.log(localStorage.getItem('username'));
+                    localStorage.setItem('password', valp);
+                    console.log(localStorage.getItem('password'));
+                    localStorage.setItem('remember', true);
+                    // console.log(localStorage.getItem('remember'));
+                    localStorage.setItem('log', true);
+                } else {
+                    localStorage.setItem('username', valu);
+                    console.log(localStorage.getItem('username'));
+                    localStorage.setItem('password', null);
+                    console.log(localStorage.getItem('password'));
+                    localStorage.setItem('remember', false);
+                    localStorage.setItem('log', true);
+                }
+                location.assign('houtaihomepage.html');
+            } else if (valu == '' && valp == '') {
+                alert('您未输入内容！');
+            } else if (valp == '') {
+                alert('请输入密码！')
+            } else {
+                alert('请输入账号！')
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
